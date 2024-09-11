@@ -3,7 +3,11 @@ const count = 8;
 const rows = [];
 
 function padRow(rowNumber, rowCount) {
-  return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
+  return (
+    " ".repeat(rowCount - rowNumber) +
+    character.repeat(2 * rowNumber - 1) +
+    " ".repeat(rowCount - rowNumber)
+  );
 }
 
 // TODO: use a different type of loop
@@ -11,11 +15,14 @@ function padRow(rowNumber, rowCount) {
   rows.push(padRow(i, count));
 }*/
 
-let continueLoop = false;
 let done = 0;
-while(continueLoop){}
 
-let result = ""
+while (rows.length < count) {
+  done++;
+  rows.push(padRow(done, count));
+}
+
+let result = "";
 
 for (const row of rows) {
   result = result + "\n" + row;
