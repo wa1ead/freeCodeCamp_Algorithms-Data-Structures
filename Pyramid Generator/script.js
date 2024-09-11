@@ -3,11 +3,12 @@ const count = 8;
 const rows = [];
 
 function padRow(rowNumber, rowCount) {
-  return " ".repeat(rowCount - rowNumber) + character.repeat(2*rowNumber-1) + " ".repeat(rowCount - rowNumber);
+  return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
 }
 
-for (let i = 0; i < count; i = i + 1) {
-  rows.push(padRow(i + 1, count));
+
+for (let i = 1; i <= count; i++) {
+  rows.push(padRow(i, count));
 }
 
 let result = ""
