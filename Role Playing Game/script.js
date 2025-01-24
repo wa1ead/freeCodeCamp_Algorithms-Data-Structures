@@ -1,7 +1,7 @@
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeaponIndex = 0;
+let currentWeapon = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];
@@ -75,7 +75,7 @@ const locations = [
       "Go to town square",
       "Go to town square",
     ],
-    "button functions": [goTown, goTown, goTown],
+    "button functions": [goTown, goTown, easterEgg],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.',
   },
   {
@@ -138,12 +138,12 @@ function buyHealth() {
 }
 
 function buyWeapon() {
-  if (currentWeaponIndex < weapons.length - 1) {
+  if (currentWeapon < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeaponIndex++;
+      currentWeapon++;
       goldText.innerText = gold;
-      let newWeapon = weapons[currentWeaponIndex].name;
+      let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
       text.innerText += " In your inventory you have: " + inventory;
@@ -195,11 +195,11 @@ function goFight() {
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText +=
-    " You attack it with your " + weapons[currentWeaponIndex].name + ".";
+    " You attack it with your " + weapons[currentWeapon].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
     monsterHealth -=
-      weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;
+      weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
   } else {
     text.innerText += " You miss.";
   }
@@ -216,7 +216,7 @@ function attack() {
   }
   if (Math.random() <= 0.1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
-    currentWeaponIndex--;
+    currentWeapon--;
   }
 }
 
@@ -254,7 +254,7 @@ function restart() {
   xp = 0;
   health = 100;
   gold = 50;
-  currentWeaponIndex = 0;
+  currentWeapon = 0;
   inventory = ["stick"];
   goldText.innerText = gold;
   healthText.innerText = health;
@@ -287,5 +287,12 @@ function pick(guess) {
     text.innerText += "Right! You win 20 gold!";
     gold += 20;
     goldText.innerText = gold;
+  } else {
+    text.innerText += "Wrong! You lose 10 health!";
+    health -= 10;
+    healthText.innerText = health;
+    if (health <= 0) {
+      lose();
+    }
   }
 }
