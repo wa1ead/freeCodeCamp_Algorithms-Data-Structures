@@ -58,7 +58,7 @@ function resetGame() {
   resetGameBtn.style.display = "none";
   optionsContainer.style.display = "block";
   winnerMsgElement.innerText = "";
-  roundResultMsg.innerText = "";
+  roundResulstMsg.innerText = "";
 }
 
 resetGameBtn.addEventListener("click", resetGame);
