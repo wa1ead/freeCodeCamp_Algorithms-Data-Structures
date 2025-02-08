@@ -32,7 +32,7 @@
   .search-card{
     padding: 2rem;
     background-color: var(--secondary);
-    margin: 0rem 10rem;
+    margin: 4rem 10rem;
     border-radius: 1rem;
     box-shadow: 0.5rem 0.5rem 
   }
@@ -76,4 +76,20 @@
     color: var(--primary);
     border-color: var(--primary);
     transition: background-color 0.5s;
+  }
+  
+  #result{
+    font-size: 1.25rem;
+    margin-top:2rem;
+  }
+  
+  .hint-box{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--secondary);
+    margin: 4rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
   }
