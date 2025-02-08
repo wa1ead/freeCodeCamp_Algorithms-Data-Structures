@@ -1,0 +1,79 @@
+:root{
+    --primary: #2D336B;
+    --secondary: #A9B5DF;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto",sans-serif;
+    background-color: var(--primary);
+    text-align: center;
+  }
+  
+  .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0rem;
+  }
+  
+  #logo{
+    width: 250px;
+  }
+  
+  .header h1{
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .search-card{
+    padding: 2rem;
+    background-color: var(--secondary);
+    margin: 0rem 10rem;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 
+  }
+  
+  #textholder{
+    font-weight: bold
+  }
+  
+  .search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  #text-input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary)
+  }
+  
+  #check-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  
+  #check-btn:hover{
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-color: var(--primary);
+    transition: background-color 0.5s;
+  }
