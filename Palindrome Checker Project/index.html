@@ -4,21 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-  <link
       href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
   <link rel="stylesheet" href="styles.css" />
   <title>Palindrome Checkere</title>
+
+    <!--FontAwesome CDN-->
+  <script src="https://kit.fontawesome.com/0eb25e2a76.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class='container'>
     <div class='header'>
       <img src='https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg' alt='freeCodeCamp' id='logo'/>
       <h1>IS IT A PALINDROME?</h1>
+    </div>
+    <div class='main'>
+      <div class='search-card'>
+        <p id='textholder'>Enter in text to check for a Palindrome:</p>
+        <div class='search-bar'>
+        <input id='text-input' type='text' required/>
+        <button id='check-btn'>
+        <i class="fa-regular fa-lightbulb"></i>
+          Check 
+        </button>
+        </div>
+      </div>
+      <div class='result-box'>
+        <p id='result'></p>
+      </div>
+      <div class='hint-box'>
+          <i class="fa-regular fa-circle-question"></i>
+        <p id='hint'></p>
+      </div>
     </div>
   </div>
 </body>
