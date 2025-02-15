@@ -179,3 +179,11 @@ typeOfSport.textContent = sport;
 teamName.textContent = team;
 worldCupYear.textContent = year;
 headCoach.textContent = coachName;
+
+const setPlayerCards = (arr = players) => {
+  playerCards.innerHTML += arr.map(
+    ({ name, position, number, isCaptain, nickname }) => {
+      return `<div class="player-card"></div>`;
+    }
+  );
+};
