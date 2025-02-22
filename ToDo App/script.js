@@ -13,21 +13,34 @@ const descriptionInput = document.getElementById("description-input");
 const taskData = [];
 let currentTask = {};
 
-const reset = () => {};
+const reset = () => {
+  titleInput.value = "";
+  dateInput.value = "";
+  descriptionInput.value = "";
+  taskForm.classList.toggle("hidden");
+  currentTask = {};
+};
 
 openTaskFormBtn.addEventListener("click", () =>
   taskForm.classList.toggle("hidden")
 );
 
 closeTaskFormBtn.addEventListener("click", () => {
-  confirmCloseDialog.showModal();
+  const formInputsContainValues =
+    titleInput.value || dateInput.value || descriptionInput.value;
+
+  if (formInputsContainValues) {
+    confirmCloseDialog.showModal();
+  } else {
+    reset();
+  }
 });
 
 cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
 discardBtn.addEventListener("click", () => {
   confirmCloseDialog.close();
-  taskForm.classList.toggle("hidden");
+  reset();
 });
 
 taskForm.addEventListener("submit", (e) => {
@@ -57,5 +70,5 @@ taskForm.addEventListener("submit", (e) => {
       `;
   });
 
-  taskForm.classList.toggle("hidden");
+  reset();
 });
