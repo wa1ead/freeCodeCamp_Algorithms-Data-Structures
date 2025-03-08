@@ -2,7 +2,9 @@ const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
 
-const decimalToBinary = (input) => {};
+const decimalToBinary = (input) => {
+  return "01110110";
+};
 
 const checkUserInput = () => {
   if (
@@ -14,7 +16,8 @@ const checkUserInput = () => {
     return;
   }
 
-  console.log(numberInput.value);
+  decimalToBinary(parseInt(numberInput.value));
+  numberInput.value = "";
 };
 
 convertBtn.addEventListener("click", checkUserInput);
