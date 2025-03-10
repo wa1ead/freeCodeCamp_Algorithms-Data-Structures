@@ -5,6 +5,7 @@ const animationContainer = document.getElementById("animation-container");
 const animationData = [
   {
     inputVal: 5,
+
     addElDelay: 1000,
   },
   {
@@ -28,7 +29,13 @@ const decimalToBinary = (input) => {
 const showAnimation = () => {
   result.innerText = "Call Stack Animation";
 
-  animationData.forEach((obj) => {});
+  animationData.forEach((obj) => {
+    setTimeout(() => {
+      animationContainer.innerHTML += `
+        <p id="${obj.inputVal}" class="animation-frame"></p>
+      `;
+    }, obj.addElDelay);
+  });
 };
 
 const checkUserInput = () => {
