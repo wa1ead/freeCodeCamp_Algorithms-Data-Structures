@@ -30,7 +30,8 @@
 
 .header h1{
   font-family: 'serif';
-  font-size: 50px;
+  font-size: 40px;
+    text-transform: uppercase;
   text-align: center
 }
 
@@ -42,6 +43,7 @@
   gap: 25px;
   border: 2px solid;
   margin: 0 25%;
+  margin-bottom: 20px;
   padding: 30px;
   background-color: var(--secondary)
 }
@@ -52,19 +54,44 @@
   font-weight: 300
 }
 
+.converter h1 span{
+  font-family: 'serif';
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
 #number{
   width: 96%;
   border: 1px solid white;
+  background-color: #0a0a23;
   font-size: 25px;
   padding: 10px;
 }
 
 #convert-btn{
   width: 100%;
-  padding: 25px;
+  padding: 15px;
   background-image: linear-gradient(#fecc4c, #ffac33);
   color: black;
   font-size: 20px;
   border: 1px solid #ffac33;
   cursor: pointer
+}
+
+.output{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 25%;
+  height: 100px;
+  border: 2px solid;
+  background-color: var(--secondary)
+}
+
+#output{
+  font-family: 'serif';
+  font-size: 40px;
+  font-weight: 100;
+  text-transform: uppercase;
+  background-color: transparent;
 }
