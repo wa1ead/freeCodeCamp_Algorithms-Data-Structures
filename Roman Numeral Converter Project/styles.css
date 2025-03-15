@@ -3,6 +3,8 @@
 :root{
   --primary: #1b1b32;
   --secondary: #3b3b4f;
+  --danger: #850000;
+  --error: #ffadad;
 }
 
 *{
@@ -78,7 +80,7 @@
   cursor: pointer
 }
 
-.output{
+#output{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,10 +90,29 @@
   background-color: var(--secondary)
 }
 
-#output{
+#output-danger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 25%;
+  height: 100px;
+  border: 2px solid var(--danger);
+  background-color: var(--error);
+  color: var(--danger)
+}
+
+.output-result{
   font-family: 'serif';
   font-size: 40px;
   font-weight: 100;
   text-transform: uppercase;
   background-color: transparent;
+}
+
+.output-error{
+  font-size: 40px;
+  font-weight: 100;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--danger)
 }

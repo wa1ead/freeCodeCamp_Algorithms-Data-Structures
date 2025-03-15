@@ -8,11 +8,14 @@ const convertNumber = (e) => {
   const number = parseInt(numberInput.value, 10);
 
   if (isNaN(number)) {
-    output.innerHTML = "Please enter a valid number";
+    output.setAttribute("id", "output-danger");
+    output.innerHTML = `<p class='output-error'>Please enter a valid number</p>`;
   } else if (number <= 0) {
-    output.innerHTML = "Please enter a number greater than or equal to 1";
+    output.setAttribute("id", "output-danger");
+    output.innerHTML = `<p class='output-error'>Please enter a number greater than or equal to 1</p>`;
   } else if (number >= 4000) {
-    output.innerHTML = "Please enter a number less than or equal to 3999";
+    output.setAttribute("id", "output-danger");
+    output.innerHTML = `<p class='output-error'>Please enter a number less than or equal to 3999</p>`;
   }
   return;
 };
